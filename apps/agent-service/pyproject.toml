@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "agent-service"
+version = "0.1.0"
+description = "AgentOps Python Agent Service"
+authors = ["Your Name <email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = {extras = ["standard"], version = "^0.30.0"}
+langgraph = "^0.2.0"
+langchain-anthropic = "^0.2.0"
+pymongo = "^4.8.0"
+redis = "^5.0.0"
+python-dotenv = "^1.0.1"
+langfuse = "^2.45.0"
+pydantic = "^2.9.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.0.0"
+ruff = "^0.5.0"
+mypy = "^1.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

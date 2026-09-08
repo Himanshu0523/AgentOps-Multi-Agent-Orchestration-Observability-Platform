@@ -1,0 +1,100 @@
+# ==============================================================================
+# AgentOps Monorepo Root .gitignore
+# ==============================================================================
+
+# Environment & Secrets (Never commit credentials)
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# Node.js & Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.turbo/
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Next.js & Frontend Builds
+.next/
+out/
+*.tsbuildinfo
+.vercel/
+
+# Database & Persistent Volumes
+*.sqlite
+*.sqlite3
+*.db
+mongo_data/
+postgres_data/
+redis_data/
+
+# Logs & Runtime
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# OS & File System Artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDEs and Editors
+.idea/
+*.sublime-workspace
+*.sublime-project
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Scratch & Temporary Testing Files
+scratch/
+tmp/
+temp/

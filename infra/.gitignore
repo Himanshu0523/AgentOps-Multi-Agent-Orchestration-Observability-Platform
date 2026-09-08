@@ -1,0 +1,20 @@
+# Local environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Local docker compose overrides
+docker-compose.override.yml
+*.local.yml
+
+# Database / volume data directories
+mongo_data/
+postgres_data/
+redis_data/
+local_data/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
