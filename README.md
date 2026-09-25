@@ -6,7 +6,7 @@
 
 ## 1. Why This Project
 
-Companies are moving past single-chatbot features into **agentic pipelines**: multiple LLM-driven agents that plan, call tools, write code, browse the web, and hand off work to each other. The unsolved problem isn't "can an agent do a task" — it's **can you trust, monitor, and control a fleet of agents in production**. This project builds that control layer, which maps directly to real roles: AI Platform Engineer, Agent Infrastructure Engineer, LLMOps Engineer.
+ **agentic pipelines**: multiple LLM-driven agents that plan, call tools, write code, browse the web, and hand off work to each other. The unsolved problem isn't "can an agent do a task" — it's **can you trust, monitor, and control a fleet of agents in production**. This project builds that control layer, which maps directly to real roles: AI Platform Engineer, Agent Infrastructure Engineer, LLMOps Engineer.
 
 ---
 
@@ -111,43 +111,6 @@ Each agent step that is flagged `risk_level != "low"` (file write, external send
 
 ---
 
-## 7. Implementation Plan (6–8 weeks, solo)
-
-**Week 1 — Foundations**
-- Postgres schema, FastAPI skeleton, auth, basic Next.js shell.
-- Single-agent LangGraph loop (no orchestration yet) that can call one tool.
-
-**Week 2 — Multi-agent orchestration**
-- Add Planner node that produces a subtask graph.
-- Wire Researcher + Coder as separate LangGraph nodes with shared state.
-
-**Week 3 — Observability**
-- Integrate Langfuse SDK around every LLM/tool call.
-- Build the trace-tree UI component (recursive tree renderer).
-
-**Week 4 — Approval gate + sandbox**
-- Redis approval queue, WebSocket push to UI, approve/reject endpoint.
-- Docker sandbox for code execution with resource limits & timeout.
-
-**Week 5 — Cost tracking & budgets**
-- Token counting middleware, per-model pricing table, live cost dashboard (recharts).
-- Budget cap that halts a task automatically.
-
-**Week 6 — Reviewer agent + replay mode**
-- Add Reviewer node, replay endpoint that re-runs a stored trace step against the same input.
-
-**Week 7–8 — Polish + deploy**
-- Docker Compose for all services, deploy to Fly.io, write demo script, record a 2-minute walkthrough video for your resume/portfolio link.
-
----
-
-## 8. What to Say in an Interview
-
-> "I built the safety and observability layer that sits between raw LLM agent frameworks and production use — full cost tracking, human approval gates on risky actions, and a replayable trace tree for debugging agent decisions."
-
-This answers the exact question hiring managers ask: *"How do you know the agent won't do something wrong?"*
-
----
 
 ## 9. Stretch Goals
 
